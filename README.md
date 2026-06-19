@@ -1,4 +1,4 @@
-This repository contains the complete, handcrafted source code for the **IpfUp** project.
+This repository contains the complete, handcrafted source code for the project.
 
 ## Project Overview
 This project was developed from scratch using **HTML5, CSS3, and JavaScript** to provide a high-performance, 
