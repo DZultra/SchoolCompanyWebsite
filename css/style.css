@@ -1,0 +1,464 @@
+/*--------------------------------------------------------------------- File Name: style.css ---------------------------------------------------------------------*/
+
+/*--------------------------------------------------------------------- import Fonts ---------------------------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+
+/* 
+   New Color Palette:
+   --primary-green: #2d5a27; (Deep Forest Green)
+   --accent-wood: #8b5a2b; (Rich Wood Brown)
+   --light-bg: #f8f9f7; (Off-white / Paper)
+   --dark-text: #2c2c2c;
+*/
+
+:root {
+    --primary-green: #2d5a27;
+    --accent-wood: #8b5a2b;
+    --light-bg: #f8f9f7;
+    --dark-text: #2c2c2c;
+    --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/*--------------------------------------------------------------------- skeleton ---------------------------------------------------------------------*/
+
+* {
+     box-sizing: border-box !important;
+}
+
+html {
+     scroll-behavior: smooth;
+     overflow-x: hidden !important;
+     height: 100%;
+}
+
+body {
+     margin: 0;
+     color: #4a4a4a;
+     font-size: 16px;
+     font-family: 'Montserrat', sans-serif;
+     line-height: 1.7;
+     font-weight: 400;
+     background-color: var(--light-bg);
+     /* Subtle wood grain pattern effect */
+     background-image: 
+        linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)),
+        url("https://www.transparenttextures.com/patterns/wood-pattern.png");
+     overflow-x: hidden !important;
+     min-height: 100vh; /* Use vh for absolute viewport filling */
+     display: flex;
+     flex-direction: column;
+}
+
+.logo img {
+    max-height: 60px;
+    width: auto;
+    transition: var(--transition);
+}
+
+.logo:hover img {
+    transform: scale(1.05);
+}
+
+a {
+     color: var(--primary-green);
+     text-decoration: none !important;
+     outline: none !important;
+     transition: var(--transition);
+}
+
+a:hover {
+    color: var(--accent-wood);
+}
+
+h1, h2, h3, h4, h5, h6 {
+     font-family: 'Playfair Display', serif;
+     font-weight: 700;
+     color: var(--dark-text);
+     margin-bottom: 1.5rem;
+     line-height: 1.2;
+}
+
+h1 { font-size: 3.5rem; }
+h2 { font-size: 2.8rem; }
+h3 { font-size: 2.2rem; }
+h4 { font-size: 1.8rem; }
+
+p {
+     margin-bottom: 1.5rem;
+     font-weight: 400;
+}
+
+img {
+     max-width: 100%;
+     height: auto;
+     border-radius: 8px;
+}
+
+.layout_padding {
+     padding: 60px 0;
+}
+
+/* header section start */
+
+.header_section {
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    padding: 10px 0;
+}
+
+.navbar-brand img {
+    max-height: 45px;
+}
+
+.navbar-nav .nav-link {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--dark-text) !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 8px 15px !important;
+    position: relative;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 15px;
+    right: 15px;
+    height: 2px;
+    background-color: var(--primary-green);
+    transform: scaleX(0);
+    transition: var(--transition);
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .active .nav-link::after {
+    transform: scaleX(1);
+}
+
+.logo { 
+    width: auto;
+}
+
+/* banner section start */
+
+.banner_section {
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(../images/banner-bg.jpeg);
+    background-size: cover;
+    background-position: center 17.5%;
+    color: #fff;
+    padding: 100px 0;
+    text-align: left;
+}
+
+.banner_main {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 50px;
+    border-radius: 4px;
+    border-left: 8px solid var(--primary-green);
+    max-width: 600px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.banner_taital {
+    font-size: 2.8rem;
+    color: var(--dark-text);
+    margin-bottom: 15px;
+}
+
+.banner_text {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.contact_bt a {
+    display: inline-block;
+    background-color: var(--primary-green);
+    color: #fff !important;
+    padding: 12px 35px;
+    border-radius: 4px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition);
+}
+
+.contact_bt a:hover {
+    background-color: var(--accent-wood);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* about section start */
+
+.about_section {
+    background-color: #fff;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Values Section */
+.values_section {
+    padding: 60px 0;
+    background-color: var(--light-bg);
+}
+
+.value_card {
+    text-align: center;
+    padding: 30px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    height: 100%;
+    transition: var(--transition);
+}
+
+.value_card:hover {
+    transform: translateY(-5px);
+}
+
+.value_icon {
+    font-size: 2.5rem;
+    color: var(--primary-green);
+    margin-bottom: 20px;
+}
+
+.value_taital {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.about_taital {
+    position: relative;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+}
+
+.about_taital::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent-wood);
+}
+
+.about_image img {
+    box-shadow: 15px 15px 0 var(--primary-green);
+    transition: var(--transition);
+}
+
+.about_image:hover img {
+    transform: scale(1.02);
+    filter: brightness(1.05);
+    box-shadow: 10px 10px 0 var(--primary-green);
+}
+
+.read_bt a {
+    color: var(--primary-green);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid var(--primary-green);
+    padding-bottom: 5px;
+}
+
+/* services section start */
+
+.services_section {
+    background-color: var(--light-bg);
+    flex-grow: 1;
+}
+
+.icon_box, .icon_box2, .icon_box3 {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+    transition: var(--transition);
+    border-top: 4px solid var(--primary-green);
+}
+
+.icon_box:hover, .icon_box2:hover, .icon_box3:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.selection_text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.price_tag {
+    font-weight: 700;
+    color: var(--accent-wood);
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.services_image img {
+    margin-top: 20px;
+    border: 1px solid #eee;
+}
+
+/* blog section start */
+
+.blog_section {
+    background-color: #fff;
+    flex-grow: 1;
+}
+
+.blog_img img {
+    box-shadow: 10px 10px 0 var(--accent-wood);
+    transition: var(--transition);
+}
+
+.blog_img:hover img {
+    transform: scale(1.02);
+    box-shadow: 5px 5px 0 var(--accent-wood);
+}
+
+.blog_taital {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: var(--dark-text);
+}
+
+.blog_text {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.8;
+}
+
+.placeholder_section {
+    background-color: #fff;
+}
+
+/* contact section start */
+
+.contact_section {
+    background: linear-gradient(rgba(45, 90, 39, 0.7), rgba(45, 90, 39, 0.7)), url(../images/contact-bg.png);
+    background-size: cover;
+    color: #fff;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact_page .contact_section {
+    padding: 60px 0; 
+}
+
+.contact_taital {
+    color: #fff;
+}
+
+.contact_header {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 5px;
+}
+
+.contact_text {
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: 500;
+}
+
+/* footer section start */
+
+.footer_section {
+    background-color: #1a1a1a;
+    padding: 60px 0;
+    color: #888;
+    margin-top: auto;
+}
+
+.location_main {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.location_text {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    transition: var(--transition);
+}
+
+.location_text img {
+    margin-right: 15px;
+    filter: brightness(0) invert(0.6);
+    transition: var(--transition);
+}
+
+.location_text:hover img {
+    filter: brightness(0) invert(1);
+}
+
+.location_text a {
+    color: #888;
+    text-decoration: none;
+}
+
+.location_text a:hover {
+    color: #fff;
+}
+
+.copyright_section {
+    background-color: #111;
+    padding: 30px 0;
+    border-top: 1px solid #222;
+}
+
+.copyright_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.copyright_text {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+}
+
+.impressum_link a {
+    font-size: 0.95rem;
+    color: #888;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition);
+}
+
+.impressum_link a:hover {
+    color: #fff;
+    letter-spacing: 2px;
+}
